@@ -21,3 +21,44 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+/* Custom Colors */
+.bg-charcoal {
+  background-color: #E7E8D1;
+}
+
+.text-charcoal {
+  color: #B85042;
+}
+
+.text-orange {
+  color: #B85042;
+}
+.heading-3d {
+  position: relative;
+  color: #B85042; /* Main orange color */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1), 3px 3px 7px rgba(0, 0, 0, 0.1);
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+}
+
+.heading-3d::before {
+  content: attr(data-text); /* Dynamic content from data-text attribute */
+  position: absolute;
+  top: 4px; /* Offset to create the 3D effect */
+  left: 4px;
+  color: rgba(255, 255, 255, 0.2); /* Light shadow layer */
+  z-index: -1; /* Push behind the main text */
+}
+
+.custom-text-xs {
+  font-size: 1.5rem; /* Smaller than Tailwind's text-xs */
+  margin-bottom: 1rem; /* Adds consistent spacing between items */
+}
+
+.hr-line {
+  width: 100%;
+  border-top: 1px solid rgba(255, 255, 255, 0.5);
+  margin: 2rem 0; /* Adjust as needed for spacing */
+}

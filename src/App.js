@@ -8,19 +8,20 @@ function App() {
     <Router>
       <div>
         {/* Navigation */}
-        <nav className="p-4 bg-blue-700 text-white flex justify-between items-center shadow-lg fixed top-0 left-0 w-full z-50">
+        <nav className="p-4 bg-charcoal text-white flex justify-between items-center shadow-lg fixed top-0 left-0 w-full z-50">
           {/* Your Name on the Left */}
-          <h1 className="text-2xl font-bold hover:text-blue-300 cursor-pointer">Rucha Dave</h1>
+          <h1 className="text-2xl font-bold hover:text-orange cursor-pointer"
+          style={{ color: '#B85042' }}
+          >Rucha Dave</h1>
 
           {/* Links on the Right */}
-          <div className="flex space-x-6">
-            
+          <div className="flex space-x-6 font-bold" style={{ color: '#B85042' }}>
             <ScrollLink
               to="Banner"
               smooth={true}
               duration={500}
               offset={-70}
-              className="cursor-pointer hover:text-blue-300 hover:scale-110 transition-all duration-300"
+              className="cursor-pointer hover:text-orange hover:scale-110 transition-all duration-300"
             >
               Home
             </ScrollLink>
@@ -29,16 +30,24 @@ function App() {
               smooth={true}
               duration={500}
               offset={-70}
-              className="cursor-pointer hover:text-blue-300 hover:scale-110 transition-all duration-300"
+              className="cursor-pointer hover:text-orange hover:scale-110 transition-all duration-300"
             >
               About
+            </ScrollLink>
+            <ScrollLink 
+              to="education" 
+              smooth={true} 
+              duration={500} 
+              offset={-70}
+            >
+              Education
             </ScrollLink>
             <ScrollLink
               to="experience"
               smooth={true}
               duration={500}
               offset={-70}
-              className="cursor-pointer hover:text-blue-300 hover:scale-110 transition-all duration-300"
+              className="cursor-pointer hover:text-orange hover:scale-110 transition-all duration-300"
             >
               Experience
             </ScrollLink>
@@ -47,7 +56,7 @@ function App() {
               smooth={true}
               duration={500}
               offset={-70}
-              className="cursor-pointer hover:text-blue-300 hover:scale-110 transition-all duration-300"
+              className="cursor-pointer hover:text-orange hover:scale-110 transition-all duration-300"
             >
               Skills
             </ScrollLink>
@@ -56,7 +65,7 @@ function App() {
               smooth={true}
               duration={500}
               offset={-70}
-              className="cursor-pointer hover:text-blue-300 hover:scale-110 transition-all duration-300"
+              className="cursor-pointer hover:text-orange hover:scale-110 transition-all duration-300"
             >
               Projects
             </ScrollLink>
@@ -65,7 +74,7 @@ function App() {
               smooth={true}
               duration={500}
               offset={-70}
-              className="cursor-pointer hover:text-blue-300 hover:scale-110 transition-all duration-300"
+              className="cursor-pointer hover:text-orange hover:scale-110 transition-all duration-300"
             >
               Contact
             </ScrollLink>
