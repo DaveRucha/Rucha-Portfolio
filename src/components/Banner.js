@@ -46,7 +46,7 @@ const Banner = () => {
               Get In Touch
             </a>
             <a
-              href={`${process.env.PUBLIC_URL}/Resume.pdf`}
+              href={`${process.env.PUBLIC_URL}/Resume-Rucha.pdf`}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-block px-6 py-3 ml-4 font-bold rounded-full shadow-lg"

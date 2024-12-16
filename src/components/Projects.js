@@ -30,6 +30,15 @@ const projects = [
       { text: 'Applied Java, JSP, Servlets, Bootstrap, and MySQL for CRUD operations, achieving improvements in data management.', icon: FaDatabase },
       { text: 'Designed an intuitive system that reduced manual entry errors by 20% and improved administrative control.', icon: FaCode }
     ]
+  },
+  {
+    title: 'React Portfolio Website',
+    url: 'https://github.com/DaveRucha/Rucha-Portfolio', // Replace with actual project link
+    description: [
+      { text: 'Built a responsive portfolio using React and Framer Motion to dynamically showcase projects and skills with advanced animations, enhancing user engagement.', icon: FaCode },
+      { text: 'Deployed on Vercel with GitHub CI/CD integration for real-time updates and seamless cross-device access.', icon: FaDatabase },
+      { text: 'Styled with Tailwind CSS for adaptive, mobile-friendly design, ensuring a professional and accessible layout.', icon: FaCode }
+    ]
   }
 ];
 
