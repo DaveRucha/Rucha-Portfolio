@@ -21,15 +21,17 @@ const Introduction = () => {
             {Abouts.map((Abt, index) => (
               <div
                 key={index}
-                className="shadow-lg rounded-lg p-6"
+                className="shadow-lg rounded-lg p-6 text-justify"
                 style={{ backgroundColor: '#A7BEAE' }}
               >
                 <p className="mt-4 text-charcoal font-bold text-lg" style={{ color: '#B85042' }}>
-                I am a Master’s student in Computer Science at San Diego State University, specializing in Full Stack and Software Development. I am eager to apply my skills in creating impactful web and mobile applications. My expertise spans Java, ReactJS, .NET, Android, JavaScript, and SQL, enabling me to build efficient, scalable solutions across both frontend and backend. 
+                I’m a Computer Science graduate student at San Diego State University, passionate about creating scalable software and intuitive web experiences. My focus lies in full-stack development, automation, and building solutions that simplify real-world workflows.
                 </p>
-                <br/>
                 <p className="mt-4 text-charcoal font-bold text-lg" style={{ color: '#B85042' }}>
-                In my previous roles as a Web Developer at Mokshit Infotech and a React.JS Intern at Tatvasoft, I contributed to diverse projects, including sports management and dynamic bookstore applications, focusing on enhancing user experience. I am skilled in REST APIs, MVC, and the Repository Pattern, with experience using tools like Postman, Jira, GitHub, and Power BI for smooth project execution.
+                With hands-on experience in React, TypeScript, .NET Core, Playwright, and Python, I enjoy bringing ideas to life through clean, efficient, and user-focused code. I’m always exploring ways to blend creativity and technology, from web applications to automation tools.
+                </p>
+                <p className="mt-4 text-charcoal font-bold text-lg" style={{ color: '#B85042' }}>
+                  What drives me most is the process of turning concepts into functional, impactful products that make people’s lives easier.I’m currently looking forward to continue growing as a developer and contribute to meaningful, innovative projects.
                 </p>
               </div>
             ))}

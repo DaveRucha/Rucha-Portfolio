@@ -4,13 +4,24 @@ import { FaMapMarkerAlt, FaCalendarAlt } from 'react-icons/fa';
 const Experience = () => {
   const experiences = [
     {
+      company: 'Reborn Tech LLC',
+      role: 'Web Developer Intern',
+      location: 'Los Angeles, CA',
+      dates: 'Aug 2025 – Oct 2025',
+      description: [
+        'Built a Chrome Extension (MV3) with React and TypeScript that automated form-filling in job applications, improving field fill accuracy by 35%.',
+        'Implemented ATS-specific field mapping and multi-entry logic, reducing errors on complex React-driven portals by 30%.',
+		    'Boosted EzCareer’s platform with Playwright automation for scraping official career pages, delivering real-time job postings to users.'
+      ],
+    },
+    {
       company: 'San Diego State University',
       role: 'Graduate Assistant',
       location: 'San Diego, CA, USA',
       dates: 'September 2024 - Present',
       description: [
-        'Assisted professor in research by analyzing large datasets from 2,800+ companies, extracting key insights that contributed to research outcomes.',
-        'Created and executed machine learning scripts, automating data processing and improving task efficiency by 40%.',
+        'Led validation and analysis of datasets from 8M+ companies using Excel, Python, and web scraping, improving data quality for research.',
+        'Automated fuzzy-matching workflows with machine learning and scalable preprocessing, boosting data comparison efficiency by 40%.',
       ],
     },
     {

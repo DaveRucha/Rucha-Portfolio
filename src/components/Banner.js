@@ -22,7 +22,7 @@ const Banner = () => {
             Rucha Avinash Dave
           </h1>
           <p className="text-xl mb-2" style={{ color: '#E7E8D1' }}>
-            Full Stack Developer | Web & Mobile Application Development
+            Full Stack Developer | Web & Software Development
           </p>
 
           {/* Animated Tagline */}
@@ -46,7 +46,7 @@ const Banner = () => {
               Get In Touch
             </a>
             <a
-              href={`${process.env.PUBLIC_URL}/Resume-Rucha.pdf`}
+              href={`${process.env.PUBLIC_URL}/Rucha-Resume.pdf`}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-block px-6 py-3 ml-4 font-bold rounded-full shadow-lg"
