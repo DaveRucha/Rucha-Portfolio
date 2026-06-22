@@ -1,100 +1,180 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { FaDatabase, FaCode, FaMobileAlt } from 'react-icons/fa';
+import FadeIn from './FadeIn';
 
 const projects = [
   {
     title: 'PackFoodReady2Go',
-    url: 'https://github.com/DaveRucha/PackFoodReady2Go', // Replace with actual project link
-    description: [
-      { text: 'Constructed a web application aimed at 250+ food packaging providers, offering over 70 different packaging solutions.', icon: FaCode },
-      { text: 'Built features like product categorization, wishlist, and real-time admin panel, improving efficiency by 30%.', icon: FaDatabase },
-      { text: 'Utilized .NET, MVC, Repository Pattern, integrated Stripe for secure payments, handling 100+ transactions per week.', icon: FaDatabase },
-      { text: 'Created a responsive frontend with JavaScript, HTML, CSS, and Bootstrap, optimizing experience across devices.', icon: FaMobileAlt }
-    ]
+    url: 'https://github.com/DaveRucha/PackFoodReady2Go',
+    tags: ['ASP.NET Core', 'C#', 'SQL Server', 'Entity Framework', 'Stripe'],
+    description: 'Full-stack e-commerce platform with 15+ modules including cart, checkout, admin dashboard, and Stripe payment integration supporting 100+ weekly transactions.',
+    bullets: [
+      'Designed normalized SQL Server schemas with 17+ tables and Repository Pattern',
+      'Integrated Stripe for end-to-end payment processing across 250+ products',
+    ],
   },
   {
-    title: 'Digital Vehicle Maintenance',
-    url: 'https://github.com/DaveRucha/dvm', // Replace with actual project link
-    description: [
-      { text: 'Executed an Android application for real-time vehicle servicing and bookings.', icon: FaMobileAlt },
-      { text: 'Enhanced navigation and booking ease by 25% with responsive design using Android, HTML, and CSS.', icon: FaCode },
-      { text: 'Leveraged PHP for server-side processing and Firebase for real-time data management, supporting 50+ transactions.', icon: FaDatabase }
-    ]
+    title: 'Music Era Discovery',
+    url: 'https://github.com/DaveRucha/music-era-discovery-pyspark',
+    tags: ['PySpark 4.0', 'MLlib', 'K-Means', 'PCA', 'Matplotlib'],
+    description: 'Distributed Big Data pipeline processing 577,018 Spotify songs — independently rediscovered the 1960s–70s music electrification shift without labeled data.',
+    bullets: [
+      'Built K-Means clustering pipeline across 9 audio features using PySpark MLlib',
+      'Selected optimal K using Silhouette Score (0.36) with data-driven decision making',
+    ],
   },
   {
-    title: 'Laptop Shop Management System',
-    url: 'https://github.com/DaveRucha/LaptopShop', // Replace with actual project link
-    description: [
-      { text: 'Prepared a web application to manage inventory for over 100 laptops, improving data handling efficiency.', icon: FaCode },
-      { text: 'Applied Java, JSP, Servlets, Bootstrap, and MySQL for CRUD operations, achieving improvements in data management.', icon: FaDatabase },
-      { text: 'Designed an intuitive system that reduced manual entry errors by 20% and improved administrative control.', icon: FaCode }
-    ]
+    title: 'AirSlides',
+    url: 'https://github.com/DaveRucha/AirSlides',
+    tags: ['Python', 'OpenCV', 'Mediapipe', 'OCR', 'Text-to-Speech'],
+    description: 'Real-time gesture recognition pipeline classifying 6 gesture classes from live webcam input for touchless slide navigation with OCR-powered audio output.',
+    bullets: [
+      'Improved gesture detection accuracy by 30% through feature extraction and preprocessing',
+      'Integrated pytesseract OCR converting 100+ slide elements per session into audio',
+    ],
   },
   {
     title: 'React Portfolio Website',
-    url: 'https://github.com/DaveRucha/Rucha-Portfolio', // Replace with actual project link
-    description: [
-      { text: 'Built a responsive portfolio using React and Framer Motion to dynamically showcase projects and skills with advanced animations, enhancing user engagement.', icon: FaCode },
-      { text: 'Deployed on Vercel with GitHub CI/CD integration for real-time updates and seamless cross-device access.', icon: FaDatabase },
-      { text: 'Styled with Tailwind CSS for adaptive, mobile-friendly design, ensuring a professional and accessible layout.', icon: FaCode }
-    ]
-  }
+    url: 'https://github.com/DaveRucha/Rucha-Portfolio',
+    tags: ['React.js', 'Tailwind CSS', 'Framer Motion', 'GitHub Actions', 'Vercel'],
+    description: 'Component-based portfolio with scroll animations, Intersection Observer API, CSS custom properties design system, and automated CI/CD pipeline.',
+    bullets: [
+      'Implemented scroll-triggered animations using Framer Motion Intersection Observer',
+      'Configured GitHub Actions CI/CD pipeline enabling push-to-deploy with zero manual steps',
+    ],
+  },
 ];
 
 const Projects = () => {
   return (
-    <div className="bg-charcoal flex flex-col items-center py-10 h-auto">
-      <h1 className="heading-3d text-center mb-25" data-text="My Projects">My Projects</h1>
-      <div className="container mx-auto flex flex-col items-center mt-3">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10">
+    <>
+      <style>{`
+        .proj-wrapper {
+          background: #0A0F1E;
+          padding: 100px 120px;
+          border-bottom: 1px solid #1E293B;
+        }
+        .proj-header { margin-bottom: 60px; }
+        .proj-subtitle { color: #9CA3AF; font-size: 1rem; margin-top: 8px; }
+        .proj-grid {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          gap: 28px;
+          margin-bottom: 48px;
+        }
+        .proj-card {
+          background: #111827;
+          border: 1px solid #1E293B;
+          border-radius: 12px;
+          padding: 28px;
+          text-decoration: none;
+          display: flex;
+          flex-direction: column;
+          gap: 14px;
+          transition: border-color 0.2s ease, box-shadow 0.2s ease;
+        }
+        .proj-card:hover {
+          border-color: #06B6D4;
+          box-shadow: 0 0 20px rgba(6,182,212,0.1);
+        }
+        .proj-title { color: #F9FAFB; font-size: 1.2rem; font-weight: 700; }
+        .proj-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+        .proj-tag {
+          background: #1E293B;
+          color: #06B6D4;
+          border: 1px solid #1E3A5F;
+          border-radius: 4px;
+          padding: 3px 10px;
+          font-size: 0.75rem;
+          font-weight: 500;
+        }
+        .proj-desc { color: #9CA3AF; font-size: 0.9rem; line-height: 1.6; }
+        .proj-bullets {
+          list-style: none;
+          padding: 0;
+          margin: 0;
+          display: flex;
+          flex-direction: column;
+          gap: 6px;
+        }
+        .proj-bullets li {
+          color: #6B7280;
+          font-size: 0.85rem;
+          line-height: 1.5;
+          padding-left: 14px;
+          position: relative;
+        }
+        .proj-bullets li::before {
+          content: '▹';
+          position: absolute;
+          left: 0;
+          color: #06B6D4;
+        }
+        .proj-link { color: #06B6D4; font-size: 0.85rem; font-weight: 600; margin-top: auto; }
+        .proj-more { display: flex; justify-content: center; }
+        .proj-more-btn {
+          background: #06B6D4;
+          color: #0A0F1E;
+          padding: 12px 36px;
+          border-radius: 6px;
+          font-weight: 600;
+          font-size: 0.95rem;
+          text-decoration: none;
+          transition: background 0.2s ease;
+        }
+        .proj-more-btn:hover { background: #0891B2; }
+        @media (max-width: 768px) {
+          .proj-wrapper { padding: 60px 24px; }
+          .proj-grid { grid-template-columns: 1fr; }
+        }
+      `}</style>
+
+      <div className="proj-wrapper" id="projects">
+        <FadeIn direction="up">
+          <div className="proj-header">
+            <div className="section-label">What I've built</div>
+            <h2 className="section-heading">Projects</h2>
+            <p className="proj-subtitle">Click any card to view the source code on GitHub.</p>
+          </div>
+        </FadeIn>
+
+        <div className="proj-grid">
           {projects.map((project, index) => (
-            <motion.a
-              key={index}
-              href={project.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              whileHover={{ scale: 1.05 }}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: index * 0.2, duration: 0.5 }}
-              className="p-6 rounded-lg shadow-xl transform transition-all hover:shadow-2xl"
-              style={{ backgroundColor: '#A7BEAE', color: '#B85042', display: 'block' }}
-            >
-              <h3 className="text-3xl font-semibold text-black mb-4" style={{ color: '#B85042' }}>
-                {project.title}
-              </h3>
-              <ul className="space-y-3">
-                {project.description.map((item, idx) => (
-                  <motion.li
-                    key={idx}
-                    className="flex items-start space-x-3"
-                    style={{ color: '#E7E8D1' }}
-                    initial={{ opacity: 0, x: -20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: idx * 0.1 }}
-                  >
-                    <item.icon className="text-lg" style={{ color: '#B85042' }} />
-                    <span className="leading-relaxed text-lg">{item.text}</span>
-                  </motion.li>
-                ))}
-              </ul>
-            </motion.a>
+            <FadeIn key={index} direction="up" delay={index * 0.1}>
+              <motion.a
+                href={project.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="proj-card"
+                whileHover={{ y: -4 }}
+              >
+                <div className="proj-title">{project.title}</div>
+                <div className="proj-tags">
+                  {project.tags.map((tag, i) => (
+                    <span key={i} className="proj-tag">{tag}</span>
+                  ))}
+                </div>
+                <p className="proj-desc">{project.description}</p>
+                <ul className="proj-bullets">
+                  {project.bullets.map((point, i) => (
+                    <li key={i}>{point}</li>
+                  ))}
+                </ul>
+                <span className="proj-link">View on GitHub →</span>
+              </motion.a>
+            </FadeIn>
           ))}
         </div>
 
-        {/* "More" Button to GitHub */}
-        <a
-          href="https://github.com/DaveRucha?tab=repositories"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="mt-4 px-12 py-3 bg-orange-500 text-black font-semibold rounded-full shadow-lg hover:bg-orange-600 transition-colors duration-300"
-          style={{ backgroundColor: '#A7BEAE', color: '#B85042' }}
-        >
-          More
-        </a>
+        <FadeIn direction="up" delay={0.2}>
+          <div className="proj-more">
+            <a href="https://github.com/DaveRucha?tab=repositories" target="_blank" rel="noopener noreferrer" className="proj-more-btn">
+              More on GitHub
+            </a>
+          </div>
+        </FadeIn>
       </div>
-    </div>
+    </>
   );
 };
 
