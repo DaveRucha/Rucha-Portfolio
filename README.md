@@ -1,4 +1,4 @@
-# Rucha Dave — Portfolio
+# Rucha Dave - Portfolio
 
 A modern, responsive developer portfolio built with React, featuring scroll animations, interactive UI components, and a 98/94/100/92 Lighthouse score.
 
