@@ -164,10 +164,7 @@ const Contact = () => {
             <h2 className="section-heading">Contact Me</h2>
           </div>
         </FadeIn>
-        <div className="contact-header">
-          <div className="section-label">Get in touch</div>
-          <h2 className="section-heading">Contact Me</h2>
-        </div>
+        
 
         <div className="contact-inner">
           <FadeIn direction="right">

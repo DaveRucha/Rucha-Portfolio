@@ -6,6 +6,7 @@ const projects = [
   {
     title: 'PackFoodReady2Go',
     url: 'https://github.com/DaveRucha/PackFoodReady2Go',
+    image: `${process.env.PUBLIC_URL}/packfood.png`,
     tags: ['ASP.NET Core', 'C#', 'SQL Server', 'Entity Framework', 'Stripe'],
     description: 'Full-stack e-commerce platform with 15+ modules including cart, checkout, admin dashboard, and Stripe payment integration supporting 100+ weekly transactions.',
     bullets: [
@@ -16,8 +17,9 @@ const projects = [
   {
     title: 'Music Era Discovery',
     url: 'https://github.com/DaveRucha/music-era-discovery-pyspark',
+    image: `${process.env.PUBLIC_URL}/music.png`,
     tags: ['PySpark 4.0', 'MLlib', 'K-Means', 'PCA', 'Matplotlib'],
-    description: 'Distributed Big Data pipeline processing 577,018 Spotify songs — independently rediscovered the 1960s–70s music electrification shift without labeled data.',
+    description: 'Distributed Big Data pipeline processing 577,018 Spotify songs, independently rediscovered the 1960s–70s music electrification shift without labeled data.',
     bullets: [
       'Built K-Means clustering pipeline across 9 audio features using PySpark MLlib',
       'Selected optimal K using Silhouette Score (0.36) with data-driven decision making',
@@ -26,6 +28,7 @@ const projects = [
   {
     title: 'AirSlides',
     url: 'https://github.com/DaveRucha/AirSlides',
+    image: `${process.env.PUBLIC_URL}/airslides.png`,
     tags: ['Python', 'OpenCV', 'Mediapipe', 'OCR', 'Text-to-Speech'],
     description: 'Real-time gesture recognition pipeline classifying 6 gesture classes from live webcam input for touchless slide navigation with OCR-powered audio output.',
     bullets: [
@@ -36,11 +39,12 @@ const projects = [
   {
     title: 'React Portfolio Website',
     url: 'https://github.com/DaveRucha/Rucha-Portfolio',
+    image: `${process.env.PUBLIC_URL}/portfolio.png`,
     tags: ['React.js', 'Tailwind CSS', 'Framer Motion', 'GitHub Actions', 'Vercel'],
     description: 'Component-based portfolio with scroll animations, Intersection Observer API, CSS custom properties design system, and automated CI/CD pipeline.',
     bullets: [
       'Implemented scroll-triggered animations using Framer Motion Intersection Observer',
-      'Configured GitHub Actions CI/CD pipeline enabling push-to-deploy with zero manual steps',
+      'Achieved 98/94/100/92 Lighthouse scores across Performance, Accessibility, Best Practices, SEO',
     ],
   },
 ];
@@ -66,18 +70,35 @@ const Projects = () => {
           background: #111827;
           border: 1px solid #1E293B;
           border-radius: 12px;
-          padding: 28px;
           text-decoration: none;
           display: flex;
           flex-direction: column;
-          gap: 14px;
+          overflow: hidden;
           transition: border-color 0.2s ease, box-shadow 0.2s ease;
         }
         .proj-card:hover {
           border-color: #06B6D4;
-          box-shadow: 0 0 20px rgba(6,182,212,0.1);
+          box-shadow: 0 0 24px rgba(6,182,212,0.12);
         }
-        .proj-title { color: #F9FAFB; font-size: 1.2rem; font-weight: 700; }
+        .proj-image {
+          width: 100%;
+          height: 180px;
+          object-fit: cover;
+          object-position: top;
+          border-bottom: 1px solid #1E293B;
+          transition: opacity 0.2s ease;
+        }
+        .proj-card:hover .proj-image {
+          opacity: 0.85;
+        }
+        .proj-body {
+          padding: 24px;
+          display: flex;
+          flex-direction: column;
+          gap: 12px;
+          flex: 1;
+        }
+        .proj-title { color: #F9FAFB; font-size: 1.15rem; font-weight: 700; }
         .proj-tags { display: flex; flex-wrap: wrap; gap: 8px; }
         .proj-tag {
           background: #1E293B;
@@ -88,7 +109,7 @@ const Projects = () => {
           font-size: 0.75rem;
           font-weight: 500;
         }
-        .proj-desc { color: #9CA3AF; font-size: 0.9rem; line-height: 1.6; }
+        .proj-desc { color: #9CA3AF; font-size: 0.88rem; line-height: 1.6; }
         .proj-bullets {
           list-style: none;
           padding: 0;
@@ -99,7 +120,7 @@ const Projects = () => {
         }
         .proj-bullets li {
           color: #6B7280;
-          font-size: 0.85rem;
+          font-size: 0.82rem;
           line-height: 1.5;
           padding-left: 14px;
           position: relative;
@@ -110,7 +131,12 @@ const Projects = () => {
           left: 0;
           color: #06B6D4;
         }
-        .proj-link { color: #06B6D4; font-size: 0.85rem; font-weight: 600; margin-top: auto; }
+        .proj-link {
+          color: #06B6D4;
+          font-size: 0.85rem;
+          font-weight: 600;
+          margin-top: auto;
+        }
         .proj-more { display: flex; justify-content: center; }
         .proj-more-btn {
           background: #06B6D4;
@@ -148,19 +174,27 @@ const Projects = () => {
                 className="proj-card"
                 whileHover={{ y: -4 }}
               >
-                <div className="proj-title">{project.title}</div>
-                <div className="proj-tags">
-                  {project.tags.map((tag, i) => (
-                    <span key={i} className="proj-tag">{tag}</span>
-                  ))}
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className="proj-image"
+                  loading="lazy"
+                />
+                <div className="proj-body">
+                  <div className="proj-title">{project.title}</div>
+                  <div className="proj-tags">
+                    {project.tags.map((tag, i) => (
+                      <span key={i} className="proj-tag">{tag}</span>
+                    ))}
+                  </div>
+                  <p className="proj-desc">{project.description}</p>
+                  <ul className="proj-bullets">
+                    {project.bullets.map((point, i) => (
+                      <li key={i}>{point}</li>
+                    ))}
+                  </ul>
+                  <span className="proj-link">View on GitHub →</span>
                 </div>
-                <p className="proj-desc">{project.description}</p>
-                <ul className="proj-bullets">
-                  {project.bullets.map((point, i) => (
-                    <li key={i}>{point}</li>
-                  ))}
-                </ul>
-                <span className="proj-link">View on GitHub →</span>
               </motion.a>
             </FadeIn>
           ))}
@@ -168,9 +202,14 @@ const Projects = () => {
 
         <FadeIn direction="up" delay={0.2}>
           <div className="proj-more">
-            <a href="https://github.com/DaveRucha?tab=repositories" target="_blank" rel="noopener noreferrer" className="proj-more-btn">
+            <motion.a
+              href="https://github.com/DaveRucha?tab=repositories"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="proj-more-btn"
+            >
               More on GitHub
-            </a>
+              </motion.a>
           </div>
         </FadeIn>
       </div>

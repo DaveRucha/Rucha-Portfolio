@@ -98,7 +98,7 @@ const Introduction = () => {
 
             <FadeIn direction="up" delay={0.1}>
               <p className="about-text">
-                I'm a <strong>CS graduate from SDSU</strong> building scalable full-stack apps and data pipelines. I turn complex problems into clean, efficient solutions — from Chrome extensions that automate job applications to distributed pipelines processing 100M+ rows.
+                I'm a <strong>CS graduate from SDSU</strong> building scalable full-stack apps and data pipelines, from Chrome extensions automating job applications to distributed pipelines processing 100M+ rows.
               </p>
               <p className="about-text">
                 Currently looking for <strong>full-stack or data engineering roles</strong> where I can ship real products and grow fast.
@@ -126,11 +126,10 @@ const Introduction = () => {
 
           <div className="about-right">
             {[
-              { label: 'Education', value: 'MS Computer Science', sub: 'San Diego State University · GPA 3.78' },
-              { label: 'Status', value: 'Open to Work', sub: 'F-1 OPT · Requires H-1B Sponsorship' },
-              { label: 'Location', value: 'San Diego, CA', sub: 'Open to relocation anywhere in the US' },
-              { label: 'Experience', value: '4 Internships', sub: 'Full Stack · Data Engineering · Automation' },
-              { label: 'Currently building', value: 'Job search automation tools', sub: 'React · Python · Chrome Extension MV3' },
+              { label: 'Education', value: 'MS Computer Science', sub: 'San Diego State University · GPA 3.77' },
+              { label: 'Status', value: 'Open to Work', sub: ' ' },
+              { label: 'Location', value: 'California', sub: 'Open to relocation anywhere in the US' },
+              { label: 'Experience', value: '3 Internships', sub: 'Full Stack · Data Engineering · Automation' },
             ].map((card, i) => (
               <FadeIn key={i} direction="left" delay={i * 0.08}>
                 <div className="about-card">

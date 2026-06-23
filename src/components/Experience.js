@@ -2,18 +2,7 @@ import React from 'react';
 import FadeIn from './FadeIn';
 
 const experiences = [
-  {
-    role: 'Web Developer Intern',
-    company: 'Reborn Tech LLC',
-    location: 'Los Angeles, CA',
-    dates: 'Aug 2025 – Oct 2025',
-    stack: ['React', 'TypeScript', 'Chrome Extension MV3', 'Playwright', 'Python'],
-    bullets: [
-      'Built Chrome Extension (MV3) autofill system with fuzzy field matching, improving job application completion rates by 35%.',
-      'Engineered multi-step form support reducing form failures by 30% across complex ATS platforms.',
-      'Developed config-driven Python and Playwright scraping pipeline across 5+ career portals.',
-    ],
-  },
+  
   {
     role: 'Graduate Assistant',
     company: 'San Diego State University',
@@ -24,6 +13,18 @@ const experiences = [
       'Designed ETL pipelines processing 100M+ rows of financial datasets with schema validation and batch processing.',
       'Improved data comparison efficiency by 40% using fuzzy-matching automation across 8M+ records.',
       'Applied LLM-assisted workflows with Claude AI and ChatGPT to automate repetitive data-cleaning tasks.',
+    ],
+  },
+  {
+    role: 'Web Developer Intern',
+    company: 'Reborn Tech LLC',
+    location: 'Los Angeles, CA',
+    dates: 'Aug 2025 – Oct 2025',
+    stack: ['React', 'TypeScript', 'Chrome Extension MV3', 'Playwright', 'Python'],
+    bullets: [
+      'Built Chrome Extension (MV3) autofill system with fuzzy field matching, improving job application completion rates by 35%.',
+      'Engineered multi-step form support reducing form failures by 30% across complex ATS platforms.',
+      'Developed config-driven Python and Playwright scraping pipeline across 5+ career portals.',
     ],
   },
   {

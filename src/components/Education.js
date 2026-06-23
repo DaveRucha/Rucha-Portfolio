@@ -108,7 +108,7 @@ const Education = () => {
                 </div>
                 <div className="edu-meta-item">
                   <span className="edu-meta-label">GPA</span>
-                  <span className="edu-meta-value">3.78 / 4.00</span>
+                  <span className="edu-meta-value">3.77 / 4.00</span>
                 </div>
                 <div className="edu-meta-item">
                   <span className="edu-meta-label">Location</span>
