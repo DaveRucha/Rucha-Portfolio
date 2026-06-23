@@ -1,70 +1,60 @@
-# Getting Started with Create React App
+# Rucha Dave — Portfolio
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A modern, responsive developer portfolio built with React, featuring scroll animations, interactive UI components, and a 98/94/100/92 Lighthouse score.
 
-## Available Scripts
+🌐 **Live Site:** [rucha-portfolio-psi.vercel.app](https://rucha-portfolio-psi.vercel.app/)
 
-In the project directory, you can run:
+---
 
-### `npm start`
+## Features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- Typing animation cycling through roles on the hero banner
+- Floating particle background with CSS keyframe animations
+- Intersection Observer-triggered count-up stat counters
+- Framer Motion scroll animations on every section
+- Responsive design with hamburger menu on mobile
+- Contact form powered by Formspree
+- CI/CD pipeline via GitHub Actions → auto-deploy to Vercel
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Tech Stack
 
-### `npm test`
+- **Framework:** React.js 18
+- **Styling:** Tailwind CSS, CSS custom properties design system
+- **Animations:** Framer Motion, CSS keyframes
+- **APIs:** Intersection Observer API, Formspree
+- **DevOps:** GitHub Actions CI/CD, Vercel
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Sections
 
-### `npm run build`
+- Hero — typing animation, particle background, animated stats
+- About — background, skills highlights, info cards
+- Education — SDSU MS CS · Gujarat Technological University BE
+- Experience — timeline layout with tech stack tags
+- Skills — grouped by Frontend, Backend, Data, Tools
+- Projects — PackFoodReady2Go, Music Era Discovery, AirSlides, React Portfolio
+- Contact — Formspree form + social links
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Getting Started
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```bash
+git clone https://github.com/DaveRucha/Rucha-Portfolio.git
+cd Rucha-Portfolio
+npm install
+npm start
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Open [http://localhost:3000](http://localhost:3000) to view locally.
 
-### `npm run eject`
+## Deployment
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Push to `main` branch triggers automatic deployment to Vercel via GitHub Actions.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```bash
+git add .
+git commit -m "your message"
+git push
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+---
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Built by [Rucha Dave](https://www.linkedin.com/in/rucha-dave-386ab927a/) · [GitHub](https://github.com/DaveRucha)
